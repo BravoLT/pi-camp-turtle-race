@@ -81,8 +81,7 @@ for p in players:
     max=cur
     winner=p
 
-winner.right(1800)
-winner.left(90)
+winner.right(1710)
 
 input('press enter to quit')
 
