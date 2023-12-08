@@ -2,7 +2,7 @@
 import turtle
 from random import randint
 
-turtle.speed(900)
+turtle.speed(10)
 turtle.penup()
 turtle.goto(-140, 140)
 
