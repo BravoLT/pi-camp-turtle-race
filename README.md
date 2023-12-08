@@ -9,6 +9,7 @@
 ### Python Libs
 
 * [turtle](https://docs.python.org/3/library/turtle.html)
+    * [colors](https://trinket.io/docs/colors)
 * [random](https://docs.python.org/3/library/random.html)
 
 

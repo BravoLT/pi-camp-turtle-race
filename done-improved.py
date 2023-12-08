@@ -1,9 +1,24 @@
 
+import random
 import turtle
-from random import randint
 
 
+colors=[
+  'blue',
+  'green',
+  'khaki',
+  'maroon',
+  'orange',
+  'peru',
+  'pink',
+  'purple',
+  'red',
+  'salmon',
+  'yellow'
+]
 players=[]
+players_start=300
+players_step=40
 
 
 def create_turtle(color, start):
@@ -11,19 +26,23 @@ def create_turtle(color, start):
   instance.color(color)
   instance.shape('turtle')
   instance.penup()
-  instance.goto(-240, start)
+  instance.goto(-230, start)
   instance.pendown()
-  instance.right(360)
+  
+  if random.randint(0, 1) == 1:
+    instance.left(360)
+  else:
+    instance.right(360)
 
   players.append(instance)
 
 
 turtle.speed(10)
 turtle.penup()
-turtle.goto(-200, 200)
+turtle.goto(-200, 320)
 
 for step in range(20):
-  turtle.write(step, align='center')
+  turtle.write(step + 1, align='center')
   turtle.right(90)
   turtle.forward(10)
   turtle.pendown()
@@ -38,25 +57,31 @@ for step in range(20):
   turtle.forward(20)
 
   turtle.pendown()
-  turtle.write(step, align='center')
+  turtle.write(step + 1, align='center')
   turtle.penup()
 
   turtle.backward(480)
   turtle.left(90)
   turtle.forward(20)
 
-create_turtle('red', 180)
-create_turtle('blue', 140)
-create_turtle('green', 100)
-create_turtle('yellow', 60)
-create_turtle('orange', 20)
-create_turtle('maroon', -20)
-create_turtle('purple', -60)
-create_turtle('pink', -100)
+random.shuffle(colors)
 
-for turn in range(100):
+for c in colors:
+  create_turtle(c, players_start - len(players) * players_step)
+
+for turn in range(50):
   for p in players:
-    p.forward(randint(1, 10))
+    p.forward(random.randint(1, 15))
+ 
+max=0
+winner=None
+for p in players:
+  cur=p.pos()[0]
+  if cur > max:
+    max=cur
+    winner=p
+
+winner.right(1890)
 
 input('press enter to quit')
 
