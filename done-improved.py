@@ -17,7 +17,7 @@ colors=[
   'yellow'
 ]
 players=[]
-players_start=300
+players_start=240
 players_step=40
 
 
