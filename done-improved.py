@@ -39,7 +39,7 @@ def create_turtle(color, start):
 
 turtle.speed(10)
 turtle.penup()
-turtle.goto(-200, 280)
+turtle.goto(-200, 250)
 
 for step in range(20):
   turtle.write(step + 1, align='center')
