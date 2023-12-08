@@ -39,7 +39,7 @@ def create_turtle(color, start):
 
 turtle.speed(10)
 turtle.penup()
-turtle.goto(-200, 320)
+turtle.goto(-200, 280)
 
 for step in range(20):
   turtle.write(step + 1, align='center')
@@ -81,7 +81,8 @@ for p in players:
     max=cur
     winner=p
 
-winner.right(1890)
+winner.right(1800)
+winner.left(90)
 
 input('press enter to quit')
 
